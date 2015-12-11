@@ -1,0 +1,27 @@
+{
+  "name": "flappy-bird",
+  "version": "1.0.0",
+  "description": "Thinkful Clone Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mse2321/Flappy-Bird-Clone.git"
+  },
+  "keywords": [
+    "app",
+    "game",
+    "flappy"
+  ],
+  "author": "Marcus Eubanks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mse2321/Flappy-Bird-Clone/issues"
+  },
+  "homepage": "https://github.com/mse2321/Flappy-Bird-Clone#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}
