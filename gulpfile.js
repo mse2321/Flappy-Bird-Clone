@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var jshint = require('gulp-jshint');
 var sass = require('gulp-sass');
 var imagemin = require('gulp-imagemin');
+
 var browserify = require('browserify');
 var uglify = require('gulp-uglify');
 var minifyHTML = require('gulp-minify-html');
@@ -32,7 +33,7 @@ gulp.task('sass', function() {
 
 // Watch Task
 gulp.task('watch', function() {
-  gulp.watch('js/*.js', ['jshint']);
+  gulp.watch('js/*.js', 'js/components/*.js', 'js/entities/*.js', 'js/systems/*.js',['jshint']);
   gulp.watch('css/*.scss', ['sass']);
 });
 
@@ -45,7 +46,7 @@ gulp.task('html', function() {
 
 // JavaScript build task, removes whitespace and concatenates all files
 gulp.task('scripts', function() {
-  return browserify('js/*.js', 'js/systems/*.js', 'js/entities/*.js', 'js/components/*.js')
+  return browserify('js/flappy_bird.js', 'js/components/*.js', 'js/entities/*.js', 'js/systems/*.js')
     .bundle()
     .pipe(source('app.js'))
     .pipe(buffer())

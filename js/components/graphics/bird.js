@@ -1,3 +1,5 @@
+console.log("bird graphics are working");
+
 var BirdGraphicsComponent = function(entity) {
     this.entity = entity;
 };

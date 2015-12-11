@@ -1,3 +1,5 @@
+console.log("graphics are working");
+
 var GraphicsSystem = function(entities) {
     this.entities = entities;
 };

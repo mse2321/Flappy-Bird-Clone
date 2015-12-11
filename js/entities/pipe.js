@@ -1,3 +1,5 @@
+console.log("pipe entity is working");
+
 var graphicsComponent = require("../components/graphics/pipe");
 
 var Pipe = function() {

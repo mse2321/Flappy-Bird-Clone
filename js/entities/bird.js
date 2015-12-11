@@ -1,3 +1,5 @@
+console.log("bird entity is working");
+
 var graphicsComponent = require("../components/graphics/bird");
 
 var Bird = function() {
