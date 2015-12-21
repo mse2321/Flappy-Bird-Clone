@@ -5,7 +5,14 @@ var PipeGraphicsComponent = function(entity) {
 };
 
 PipeGraphicsComponent.prototype.draw = function() {
-    console.log("Drawing a pipe");
+    var position = this.entity.components.physics.position;
+
+    context.save();
+    context.translate(position.x, position.y);
+    context.fillStyle = "green";
+    context.fillRect(0, 0, 100, 100);
+    context.restore();
+    console.log("pipe graphics have been drawn");
 };
 
 exports.PipeGraphicsComponent = PipeGraphicsComponent;

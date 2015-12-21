@@ -1,12 +1,9 @@
-console.log("graphics are working");
-
 var GraphicsSystem = function(entities) {
     this.entities = entities;
     // Canvas is where we draw
     this.canvas = document.getElementById('main-canvas');
     // Context is what we draw to
     this.context = this.canvas.getContext('2d');
-    console.log('Context has been defined');
 };
 
 GraphicsSystem.prototype.run = function() {
