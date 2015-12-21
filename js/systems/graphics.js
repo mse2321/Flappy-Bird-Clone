@@ -10,7 +10,7 @@ GraphicsSystem.prototype.run = function() {
      // Run the render loop
     window.requestAnimationFrame(this.tick.bind(this));
     // Tick the graphics system a few times to see it in action
-    for (var i=0; i<5; i++) {
+    for (var i=0; i<1; i++) {
         this.tick();
     }
 };
