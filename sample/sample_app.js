@@ -1,3 +1,9 @@
+var position = {
+        x: 0,
+        y: 0
+    };
+
+
 var InputSystem = function(entities) {
     this.entities = entities;
 
@@ -50,7 +56,7 @@ GraphicsSystem.prototype.tick = function() {
 
     this.context.restore();
 
-    window.requestAnimationFrame(this.tick.bind(this));
+    //window.requestAnimationFrame(this.tick.bind(this));
 };
 
 /* Pipe */
@@ -64,11 +70,11 @@ var PipeGraphicsComponent = function(entity, size) {
 };
 
 PipeGraphicsComponent.prototype.draw = function(context, size) {
-    //context.save();
-    //context.translate(position.x, position.y);
+    context.save();
+    context.translate(position.x, position.y);
     context.fillStyle = "green";
     context.fillRect(-this.size.x / 2, -this.size.y / 2, this.size.x, this.size.y);
-    //context.restore();
+    context.restore();
     console.log("pipe graphics have been drawn");
 };
 
@@ -97,8 +103,18 @@ var FlappyBird = function() {
     this.input = new InputSystem(this.entities);
 };
 
-FlappyBird.prototype.run = function() {
-    this.graphics.run();
+FlappyBird.prototype.run = function(position) {
+        this.graphics.run();
+        console.log(this.entities);
+
+        if (this.entities[1] == true) {
+            console.log("statement used");
+            position = {
+                x: 1,
+                y: 1
+
+            };
+        }
 };
 
 document.addEventListener('DOMContentLoaded', function() {

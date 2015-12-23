@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document Test</title>
+</head>
+<body>
+	<button>Press This</button>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>
+		$('button').on("click mousedown mouseup focus blur keydown change",function(e){
+     		console.log(e);
+		});
+	</script>
+</body>
+</html>
