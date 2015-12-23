@@ -16,4 +16,10 @@ var Pipe = function() {
     };
 };
 
+/* var pipeTop = new Pipe();
+var pipeBottom = new Pipe();
+
+pipeTop.prototype.physics.position.y = 2;
+pipeBottom.prototype.physics.position.y = -2; */
+
 exports.Pipe = Pipe;
