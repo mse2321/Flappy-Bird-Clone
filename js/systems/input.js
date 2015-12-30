@@ -6,8 +6,12 @@ var InputSystem = function(entities) {
 };
 
 InputSystem.prototype.run = function() {
-	this.canvas.addEventListener('click', this.onClick.bind(this));
-	//this.canvas.addEventListener('touchstart click', this.onClick.bind(this));
+
+	if(screen.width <= 700) {
+		this.canvas.addEventListener('touchstart', this.onClick.bind(this));
+	} else {
+		this.canvas.addEventListener('click', this.onClick.bind(this));
+	}
 };
 
 InputSystem.prototype.onClick = function() {

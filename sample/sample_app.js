@@ -75,7 +75,14 @@ PipeGraphicsComponent.prototype.draw = function(context, size) {
     context.fillStyle = "green";
     context.fillRect(-this.size.x / 2, -this.size.y / 2, this.size.x, this.size.y);
     context.restore();
-    console.log("pipe graphics have been drawn");
+    console.log("pipe1 graphics have been drawn");
+
+    context.save();
+    context.translate(0.5, 1.0);
+    context.fillStyle = "green";
+    context.fillRect(-this.size.x / 2, -this.size.y / 2, this.size.x, this.size.y);
+    context.restore();
+    console.log("pipe2 graphics have been drawn");
 };
 
 var Pipe = function() {
