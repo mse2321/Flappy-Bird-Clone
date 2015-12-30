@@ -12,6 +12,8 @@ InputSystem.prototype.run = function() {
 	} else {
 		this.canvas.addEventListener('click', this.onClick.bind(this));
 	}
+
+	// add button option for users to choose their experience
 };
 
 InputSystem.prototype.onClick = function() {
