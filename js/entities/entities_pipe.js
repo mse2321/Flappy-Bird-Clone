@@ -5,6 +5,21 @@ var physicsComponent = require("../components/physics/physics");
 
 var Pipe = function() {
 
+	var physics = new physicsComponent.PhysicsComponent(this);
+    physics.position.y = 2;
+    physics.acceleration.y = -1;
+
+    var graphics = new graphicsComponent.PipeGraphicsComponent(this);
+    
+    this.components = {
+    	physics: physics,
+        graphics: graphics
+    };
+};
+
+/*
+var Pipe = function() {
+
 	this.name = "Pipe";
   	this.color = 'green';
 
@@ -16,7 +31,7 @@ var Pipe = function() {
     var physics = new physicsComponent.PhysicsComponent(this);
     physics.position.x = 1.5;
     physics.position.y = 0.5;
-    physics.velocity.y = -0.5;
+    physics.acceleration.y = -1;
 
     var graphics = new graphicsComponent.PipeGraphicsComponent(this);
     
@@ -25,6 +40,7 @@ var Pipe = function() {
         graphics: graphics
     };
 };
+*/
 
 /*
 var pipeTop = new Pipe();
