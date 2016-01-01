@@ -10,7 +10,7 @@ GraphicsSystem.prototype.run = function() {
      // Run the render loop
     window.requestAnimationFrame(this.tick.bind(this));
     // Tick the graphics system a few times to see it in action
-    for (var i=0; i<1; i++) {
+    for (var i=0; i<i; i++) {
         this.tick();
     }
 };
@@ -38,6 +38,18 @@ GraphicsSystem.prototype.tick = function() {
 
         entity.components.graphics.draw(this.context);
     }
+
+    /*
+        for (var i=0; i<this.entities.length; i++) {
+        var entity = this.entities[i];
+        if (!'graphics' in entity.components) {
+            continue;
+        }
+
+        entity.components.graphics.draw(this.context);
+    }
+
+    */
 
     this.context.restore();
 

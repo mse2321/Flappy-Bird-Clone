@@ -3,11 +3,11 @@ console.log("pipe entity is working");
 var graphicsComponent = require("../components/graphics/pipe");
 var physicsComponent = require("../components/physics/physics");
 
-var Pipe = function() {
+/* var Pipe = function() {
 
 	var physics = new physicsComponent.PhysicsComponent(this);
     //physics.position.x = 0.8;
-    physics.position.y = 0.2;
+    physics.position.y = 0;
     //physics.velocity.x = -0.1;  // move the pipes towards the bird
     physics.acceleration.y = -1;
 
@@ -17,9 +17,9 @@ var Pipe = function() {
     	physics: physics,
         graphics: graphics
     };
-};
+}; */
 
-/*
+
 var Pipe = function() {
 
 	this.name = "Pipe";
@@ -33,7 +33,7 @@ var Pipe = function() {
     var physics = new physicsComponent.PhysicsComponent(this);
     physics.position.x = 1.5;
     physics.position.y = 0.5;
-    physics.acceleration.y = -1;
+    physics.velocity.x = -0.5;
 
     var graphics = new graphicsComponent.PipeGraphicsComponent(this);
     
@@ -42,14 +42,11 @@ var Pipe = function() {
         graphics: graphics
     };
 };
-*/
+
 
 /*
 var pipeTop = new Pipe();
 pipeTop.name = "pipeTop";
-pipeTop.physics.position.x = 1.5;
-pipeTop.physics.position.y = 0.5;
-pipeTop.physics.velocity.y = -0.5;
 
 var pipeBottom = new Pipe();
 pipeBottom.name = "pipeBottom";
@@ -60,7 +57,6 @@ pipeBottom.physics.velocity.y = -0.5;
 
 exports.pipeTop = pipeTop;
 exports.pipeBottom = pipeBottom;
-
 */
 
 exports.Pipe = Pipe;
