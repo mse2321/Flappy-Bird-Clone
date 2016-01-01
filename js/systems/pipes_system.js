@@ -7,16 +7,17 @@ var pipeSystem = function(entities) {
 };
 
 pipeSystem.prototype.run = function() {
-  this.tick();
 
   // Run the update loop
-  window.setInterval(this.tick.bind(this), 2000);
+  window.setInterval(this.tick.bind(this), 4000);
 };
 
 pipeSystem.prototype.tick = function() {
-    //var gap = 0.4 + Math.random() * 0.2;
-
-  this.entities.push(new Pipe());
+    console.log('In PipesSystem');
+	var pipeBottom = new pipe.Pipe({ x: 1, y: 0 });
+	var pipeTop = new pipe.Pipe({ x: 1, y: 0.6 });
+	
+	this.entities.push(pipeBottom, pipeTop);
 };
 
 exports.pipeSystem = pipeSystem;
