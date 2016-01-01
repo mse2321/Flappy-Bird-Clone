@@ -6,7 +6,7 @@ var physicsComponent = require("../components/physics/physics");
 var Pipe = function() {
 
 	var physics = new physicsComponent.PhysicsComponent(this);
-    physics.position.x = 0.8;
+    //physics.position.x = 0.8;
     physics.position.y = 0.2;
     //physics.velocity.x = -0.1;  // move the pipes towards the bird
     physics.acceleration.y = -1;
