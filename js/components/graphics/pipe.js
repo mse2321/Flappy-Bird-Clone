@@ -1,5 +1,3 @@
-console.log("pipe graphics are working");
-
 var PipeGraphicsComponent = function(entity) {
     this.entity = entity;
 

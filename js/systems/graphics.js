@@ -1,5 +1,5 @@
-var physicsSystem = require('./systems/systems_physics');
-var timer = require('./systems/timer');
+var physicsSystem = require('../systems/systems_physics');
+var timer = require('../systems/timer');
 
 var GraphicsSystem = function(entities) {
     this.entities = entities;
@@ -18,13 +18,15 @@ GraphicsSystem.prototype.base = function() {
 GraphicsSystem.prototype.run = function() {
   // Run the render loop
   this.frame = window.requestAnimationFrame(this.tick.bind(this));
-  document.getElementById('pause').className = "hidden";
+  //document.getElementById('pause').className = "hidden";
 };
 
+/*
 GraphicsSystem.prototype.pause = function() {
   window.cancelAnimationFrame(this.frame);
   document.getElementById('pause').className = "";
 }
+*/
 
 GraphicsSystem.prototype.tick = function() {
      // Set the canvas to the correct size if the window is resized
@@ -49,18 +51,6 @@ GraphicsSystem.prototype.tick = function() {
 
         entity.components.graphics.draw(this.context);
     }
-
-    /*
-        for (var i=0; i<this.entities.length; i++) {
-        var entity = this.entities[i];
-        if (!'graphics' in entity.components) {
-            continue;
-        }
-
-        entity.components.graphics.draw(this.context);
-    }
-
-    */
 
     this.context.restore();
 

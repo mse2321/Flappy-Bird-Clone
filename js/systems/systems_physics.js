@@ -1,3 +1,5 @@
+var timer = require('../systems/timer');
+
 var PhysicsSystem = function(entities) {
     this.entities = entities;
 };
@@ -5,6 +7,14 @@ var PhysicsSystem = function(entities) {
 PhysicsSystem.prototype.run = function() {
     // Run the update loop
     window.setInterval(this.tick.bind(this), 1000 /60);
+};
+
+PhysicsSystem.prototype.pause = function() {
+  this.timer.pause();
+};
+
+PhysicsSystem.prototype.resume = function() {
+  this.timer.resume();
 };
 
 PhysicsSystem.prototype.tick = function() {
