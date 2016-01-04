@@ -43,8 +43,6 @@ var Pipe = function() {
     };
 };
 
-
-/*
 var pipeTop = new Pipe();
 pipeTop.name = "pipeTop";
 
@@ -54,9 +52,5 @@ pipeBottom.physics.position.x = 0.5;
 pipeBottom.physics.position.y = -0.5;
 pipeBottom.physics.velocity.y = -0.5;
 
-
-exports.pipeTop = pipeTop;
-exports.pipeBottom = pipeBottom;
-*/
 
 exports.Pipe = Pipe;
