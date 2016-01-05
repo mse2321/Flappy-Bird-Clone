@@ -1,7 +1,9 @@
 var timer = require('../systems/timer');
+var collisionSystem = require("./collision");
 
 var PhysicsSystem = function(entities) {
     this.entities = entities;
+    this.collisionSystem = new collisionSystem.CollisionSystem(entities);
 };
 
 PhysicsSystem.prototype.run = function() {
@@ -26,6 +28,7 @@ PhysicsSystem.prototype.tick = function() {
 
         entity.components.physics.update(1/60);
     }
+    this.collisionSystem.tick();
 };
 
 exports.PhysicsSystem = PhysicsSystem;
