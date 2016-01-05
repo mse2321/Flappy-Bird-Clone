@@ -26,8 +26,10 @@ var PipeBottom = function() {
   };
 };
 
+/*
 PipeBottom.prototype.onCollision = function(entity) {
   console.log("PipeBottom collided with entity:", entity);
 };
+*/
 
 exports.PipeBottom = PipeBottom;

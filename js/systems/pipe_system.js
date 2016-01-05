@@ -30,6 +30,7 @@ PipeSystem.prototype.resume = function() {
 PipeSystem.prototype.tick = function() {
   if (this.status == 1) {
     this.entities.push(new pipeTop.PipeTop(), new pipeBottom.PipeBottom());
+    console.log("pipe has been created");
   } else {
     console.log("NO PIPES YO.");
   }

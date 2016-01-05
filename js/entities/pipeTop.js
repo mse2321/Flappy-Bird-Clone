@@ -4,7 +4,7 @@ var collisionComponent = require("../components/collision/rect");
 
 var PipeTop = function() {
 	this.name = "Pipe Top";
-  	this.color = 'green';
+  this.color = 'green';
 
 	this.size = {
 	    x: 0.2,
@@ -26,8 +26,10 @@ var PipeTop = function() {
     };
 };
 
+/*
 PipeTop.prototype.onCollision = function(entity) {
   console.log("PipeTop collided with entity:", entity);
 };
+*/
 
 exports.PipeTop = PipeTop;

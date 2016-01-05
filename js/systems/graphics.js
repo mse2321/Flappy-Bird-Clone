@@ -60,7 +60,7 @@ GraphicsSystem.prototype.tick = function() {
 // Function: Draw grid based on given gap size and how many lines should be drawn
 // Provided by Vicky Leong
 GraphicsSystem.prototype.drawGrid = function(gap, times) {
-  this.gap   = gap   || 0.1;
+  this.gap   = gap   || 0.2;
   this.times = times || 10;
   this.context.lineWidth = 0.001;
   this.context.beginPath();
@@ -80,6 +80,9 @@ GraphicsSystem.prototype.drawGrid = function(gap, times) {
   }
   this.context.strokeStyle = "#AAA";
   this.context.stroke();
+  //this.context.fillStyle = "#FFF";
+  //this.context.fill();
+
 };
 
 exports.GraphicsSystem = GraphicsSystem;

@@ -2,6 +2,7 @@ var graphicsSystem = require('./graphics');
 
 var bird = require('../entities/entities_bird');
 var pipeTop = require('../entities/pipeTop');
+var pipeBottom = require('../entities/pipeBottom');
 var pipeDestroyer = require('../entities/pipeDestroyer');
 
 var CollisionSystem = function(entities) {
@@ -61,6 +62,7 @@ CollisionSystem.prototype.tick = function() {
         if (entityB instanceof bird.Bird) {
           //takes all pipes off
           this.entities.splice(5, this.entities.length-5);
+          console.log("pipes have been removed");
           //this.scoreSystem.reset();
         }
 

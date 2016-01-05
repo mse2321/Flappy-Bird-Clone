@@ -13,8 +13,8 @@ var Bird = function() {
     
     this.components = {
     	physics: physics,
-        graphics: graphics,
-        collision: collision
+      graphics: graphics,
+      collision: collision
     };
 };
 
