@@ -1,5 +1,6 @@
 var graphicsComponent = require("../components/graphics/pipe");
 var physicsComponent = require("../components/physics/physics");
+var collisionComponent = require("../components/collision/rect");
 
 var Floor = function() {
   this.name = 'floor';
@@ -14,11 +15,17 @@ var Floor = function() {
   physics.position.y = 0;
 
   var graphics = new graphicsComponent.PipeGraphicsComponent(this);
+  var collision = new collisionComponent.RectCollisionComponent(this, this.size);
 
   this.components = {
     physics: physics,
     graphics: graphics,
+    collision: collision
   };
+};
+
+Floor.prototype.onCollision = function(entity) {
+  console.log("Floor collided with entity:", entity);
 };
 
 exports.Floor = Floor;

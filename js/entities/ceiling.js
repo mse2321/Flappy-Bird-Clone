@@ -1,5 +1,6 @@
 var graphicsComponent = require("../components/graphics/pipe");
 var physicsComponent = require("../components/physics/physics");
+var collisionComponent = require("../components/collision/rect");
 
 var Ceiling = function() {
   this.name = 'Ceiling';
@@ -14,12 +15,17 @@ var Ceiling = function() {
   physics.position.y = 1;
 
   var graphics = new graphicsComponent.PipeGraphicsComponent(this);
+  var collision = new collisionComponent.RectCollisionComponent(this, this.size);
 
   this.components = {
     physics: physics,
     graphics: graphics,
+    collision: collision
   };
 };
 
+Ceiling.prototype.onCollision = function(entity) {
+
+};
 
 exports.Ceiling = Ceiling;
