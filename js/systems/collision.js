@@ -1,9 +1,11 @@
+var scoreSystem = require('./score');
 var graphicsSystem = require('./graphics');
 
 var bird = require('../entities/entities_bird');
 var pipeTop = require('../entities/pipeTop');
 var pipeBottom = require('../entities/pipeBottom');
 var pipeDestroyer = require('../entities/pipeDestroyer');
+var scorer = require('../entities/scorer');
 
 var CollisionSystem = function(entities) {
     this.entities = entities;
@@ -48,13 +50,12 @@ CollisionSystem.prototype.tick = function() {
           this.entities.splice(5,2);
         }
 
-        /* if (entityA instanceof scorer.Scorer && entityB instanceof pipeTop.PipeTop){
+        if (entityA instanceof scorer.Scorer && entityB instanceof pipeTop.PipeTop){
           //Add to score
-          //console.log('+1');
-          //this.scoreSystem.addOne();
+          console.log('+1');
+          this.scoreSystem.addOne();
         }
-        */
-
+        
       }
 
       if (entityB.components.collision.onCollision) {
@@ -63,7 +64,7 @@ CollisionSystem.prototype.tick = function() {
           //takes all pipes off
           this.entities.splice(5, this.entities.length-5);
           console.log("pipes have been removed");
-          //this.scoreSystem.reset();
+          this.scoreSystem.reset();
         }
 
       }

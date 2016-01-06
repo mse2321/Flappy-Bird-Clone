@@ -51,7 +51,7 @@ GraphicsSystem.prototype.tick = function() {
 
         entity.components.graphics.draw(this.context);
     }
-
+    //this.drawGrid();
     this.context.restore();
 
     window.requestAnimationFrame(this.tick.bind(this));
@@ -78,8 +78,8 @@ GraphicsSystem.prototype.drawGrid = function(gap, times) {
     this.context.moveTo(-i, -this.gap*this.times);
     this.context.lineTo(-i,  this.gap*this.times);
   }
-  this.context.strokeStyle = "#AAA";
-  this.context.stroke();
+  //this.context.strokeStyle = "#AAA";
+  //this.context.stroke();
   //this.context.fillStyle = "#FFF";
   //this.context.fill();
 
